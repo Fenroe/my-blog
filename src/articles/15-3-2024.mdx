@@ -1,0 +1,49 @@
+---
+title: "How I made my website's colour palette using a photograph"
+date: 2024-3-15
+description: "At the start of this year I set out to redesign my portfolio website. Here's how I utilised a fun technique to create the colour palette."
+draft: true
+category: Web design
+---
+import { Image } from 'astro:assets';
+import oldHeroSection from "../images/p1i1.jpg";
+import sleepingKitten from "../images/p1i2.jpg";
+import blurredKitten from "../images/p1i3.jpg";
+import palette from "../images/p1i4.jpg";
+import redesignedHeroSection from "../images/p1i5.jpg";
+
+I'll be honest, I'm not a natural at UI design. More often than not, I'll know exactly how a piece of software should work, what features it should have, and how to organise the project, but I'll come to a screeching halt when it's time to decide how everything should look. Sometimes I'll spend entire weeks agonising over minor details, and while that can be an admirable trait for the talented designer, for me the end result just doesn't reflect that. This isn't too bad for most developers - after all, if everyone was an expert then we wouldn't need designers on the team - but in 2024 it's a different story for the self-taught developer. In the absence of a computer science degree, our work has to speak for itself, and it won't even get that chance if nobody's interested in looking. For every automated rejection email I received from a recruiter, a depressing thought never fails to cross my mind; would I have landed the job if my projects looked better?
+
+Well at the end of last year I decided to do something about that. I started studying some design-focused channels on YouTube, bought a few highly-rated Udemy courses, and over Christmas I got intimately familiar with Figma. I learned a lot about key design concepts, such as typography choices, spacing, layout and colours. I was happy with my progress, and set out to put my new skills to the test by redesigning my personal website. Today I want to go over how I used a new technique to select the colour palette.
+
+## The Old Design
+
+There's a lot I don't like about my previous design, but for today let's focus on the colour palette. Here's what the old hero section used to look like
+
+<Image src={oldHeroSection} alt="Old image" inferSize loading="lazy" format="avif" />
+
+I sourced the colours here from Tailwind's indigo palette, and while I think the palette is beautiful, my gripe is that there was no variety. Every element on this website was tinted a different shade of indigo, and because of that nothing stands out. At the time I was drawing influence from social media giants such as Facebook, who use a similar strategy to persuade their users to psychologically link the colour blue to their product. The problem with that is that Facebook isn't "just" blue; it's a social network populated by a whole spectrum of user-generated content. Because of that, the homogenous colour design lingers in the background, providing a much more subtle effect on the user. In short, it's just not the right choice for a portfolio website. For my redesign I wanted a more varied palette. While there are a lot of fantastic resources out there to find professionally-tailored colour schemes for your projects, such as [Color Hunt](https://colorhunt.co/), I wanted to make a palette that was truly my own.
+
+While brushing up on my design knowledge, I came across Vako Shvili's [web design course on Udemy.](https://www.udemy.com/course/freelance-web-design-from-design-to-development-to-making-money). I'd highly recommend Vako's course to anybody looking to get a solid grasp of design fundamentals, and under his tutelage I learned the magic of sourcing colour from real-life photographs.
+
+## Creating the Palette
+
+The logic behind this method is really quite simple. The world around us is full of beautiful things, so let's use the colours in our photos to create beautiful designs. In his course, Vako hones in on the the natural world for this technique, such as stunning landscapes and outdoor adventures, but me? I weigh things a little differently.
+
+<Image src={sleepingKitten} alt="A sleeping kitten" inferSize loading="lazy" format="avif" />
+
+I took this picture when my wife and I visited Helkatti, a cat cafe in Helsinki. I really like this picture, not just because of the cat, but something about the aesthetic balance really speaks to me. The blue light, the silver fur, the tints of gold: everything comes together in an elegant way. I had a feeling that it'd make a great candidate for Vako's technique, so I imported it into Figma and added a blur filter to it.
+
+<Image src={blurredKitten} alt="A sleeping kitten" inferSize loading="lazy" format="avif" />
+
+Blurring the image in this way mutes the features while bringing out the colours. Now we can use the eyedropper tool to extract the colours of the picture. Here's what my palette looked like afterwards.
+
+<Image src={palette} alt="A sleeping kitten" inferSize loading="lazy" format="avif" />
+
+I mentioned before that I felt the colour balance of this photograph produced an elegant result, so it's no surprise that I was able to source such an elegant colour palette using this technique. At this point you can make a few alterations, such as making the colours lighter or darker, or removing colours from the palette. As the two lighter blues were too similar, I opted to remove one of them, but I was happy with everything else. Here's how I used the palette in the final design.
+
+<Image src={redesignedHeroSection} alt="A sleeping kitten" inferSize loading="lazy" format="avif" />
+
+## Wrapping Things Up
+
+A few short months ago I felt constrained by my lack of design skills, and was overly reliant on established brands and professionals to make those decisions for me in my projects. I still have a long way left to go on my journey, but by accepting my limitations and setting out to improve on them, I've gained a bit of confidence in creating interesting colour palettes and standing on my own feet in the realm of web design. My passion will always rest squarely on the side of software development, but UI design is a skill that I'm committed to improving, bit by bit.

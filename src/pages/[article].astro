@@ -1,0 +1,26 @@
+---
+import slugify from "slugify";
+import type { GetStaticPaths } from "astro";
+import RootLayout from "../layouts/RootLayout.astro";
+import ArticleLayout from "../layouts/ArticleLayout.astro";
+
+export const getStaticPaths = (async () => {
+  const allArticles: any[] = await Astro.glob("../articles/*.mdx");
+  return allArticles.map((article) => {
+    const { title } = article.frontmatter;
+    return {
+      params: { article: slugify(title, { lower: true }) },
+      props: {
+        articleContent: article,
+      },
+    };
+  });
+}) satisfies GetStaticPaths;
+
+const { articleContent } = Astro.props;
+const { Content, frontmatter } = articleContent;
+---
+
+<ArticleLayout {frontmatter}>
+  <Content />
+</ArticleLayout>

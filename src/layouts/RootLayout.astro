@@ -1,0 +1,42 @@
+---
+import DocumentHead from "../components/DocumentHead.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "David Slade",
+  description = "A blog about software design and development",
+}: Props = Astro.props;
+---
+
+<html lang="en">
+  <DocumentHead {title} {description} />
+  <body class="bg-schemewhite dark:bg-schemeblack">
+    <header
+      class="h-16 bg-schemewhite shadow-md sticky top-0 dark:bg-schemeblack"
+    >
+      <div
+        class="max-w-screen-md w-full mx-auto h-full flex justify-between items-center px-3"
+      >
+        <a href="/">
+          <img src="/blog-logo.svg" class="h-10" alt="Logo" />
+        </a>
+        <nav class="flex items-center gap-12 h-full">
+          <a
+            href="https://davidslade.dev/projects"
+            referrerpolicy="no-referrer"
+            target="_blank"
+            class="text-xs tracking-button uppercase bg-schemenavyblue text-schemewhite px-5 py-2 rounded-lg font-bold transition-all hover:bg-schemedarkblue"
+            >See my work</a
+          >
+        </nav>
+      </div>
+    </header>
+    <main class="py-10">
+      <slot />
+    </main>
+  </body>
+</html>

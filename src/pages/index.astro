@@ -1,0 +1,32 @@
+---
+import RootLayout from "../layouts/RootLayout.astro";
+import ArticleCard from "../components/ArticleCard.astro";
+
+const allArticles: any[] = await Astro.glob("../articles/*.mdx");
+
+const articleData: any[] = allArticles.map((article) => article.frontmatter);
+
+const sortedData: any[] = articleData.sort(
+  (a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+);
+---
+
+<RootLayout>
+  <section
+    class="max-w-screen-md w-full bg-schemewhite mx-auto p-3 rounded dark:bg-schemeblack"
+  >
+    <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-6">
+        {
+          sortedData.map((data) => (
+            <ArticleCard
+              title={data.title}
+              description={data.description}
+              date={data.date}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+</RootLayout>
